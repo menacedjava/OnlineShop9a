@@ -47,6 +47,7 @@ public class UserService {
         userRepository.save(updateduser);
         return new Result(true, "User updated successfully");
     }
+//  delete method
     public Result deleteUser(Long userId) {
         User deleteduser = userRepository.findById(userId).orElse(null);
         if (deleteduser == null) {
