@@ -2,13 +2,13 @@ package org.example.onlineshop9a.dto;
 
 
 public class UserDto {
-    private Long userid;
+    private Long id;
     private String username;
     private String password;
     private String email;
 
-    public UserDto(Long userid, String username, String password, String email) {
-        this.userid = userid;
+    public UserDto(Long id, String username, String password, String email) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
@@ -17,12 +17,12 @@ public class UserDto {
     public UserDto() {
     }
 
-    public Long getUserid() {
-        return userid;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserid(Long userid) {
-        this.userid = userid;
+    public void setId(Long userid) {
+        this.id = userid;
     }
 
     public String getUsername() {
@@ -52,7 +52,7 @@ public class UserDto {
     @Override
     public String toString() {
         return "UserDto{" +
-                "userid=" + userid +
+                "userid=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +

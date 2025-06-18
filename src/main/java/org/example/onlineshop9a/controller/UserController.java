@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController //Controller Annotation
-@RequestMapping("{/api-user}") //our User-API
+@RequestMapping("/api/user") //our User-API
 public class UserController {
     @Autowired  //DI
     private UserService userService;
@@ -20,7 +20,7 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     public User getUser(@PathVariable int id) {
         return userService.getUserById(id);
     }
@@ -30,12 +30,12 @@ public class UserController {
         return userService.createUser(userDto);
     }
 
-    @PutMapping("{/id}")
+    @PutMapping("/{id}")
     public Result updateUser(@PathVariable Long id, @RequestBody UserDto userDto) {
         return userService.updateUser(id, userDto);
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public Result deleteUser(@PathVariable Long id) {
         return userService.deleteUser(id);
     }

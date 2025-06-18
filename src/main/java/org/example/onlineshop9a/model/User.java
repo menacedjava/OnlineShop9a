@@ -3,10 +3,11 @@ package org.example.onlineshop9a.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "app_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userid;
+    private Long id;
     @Column(nullable = false)
     private String username;
     @Column(nullable = false)
@@ -14,19 +15,19 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    public User(Long userid, String username, String password, String email) {
-        this.userid = userid;
+    public User(Long id, String username, String password, String email) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
     }
 
-    public Long getUserid() {
-        return userid;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserid(Long userid) {
-        this.userid = userid;
+    public void setId(Long userid) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -56,7 +57,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userid=" + userid +
+                "userid=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
